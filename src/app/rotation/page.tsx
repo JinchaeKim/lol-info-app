@@ -1,7 +1,7 @@
 import React from "react";
 
 const Rotationpage = () => {
-  return <div>Rotationpage</div>;
+  return <h1 className="flexCenter title">Champion Rotation</h1>;
 };
 
 export default Rotationpage;

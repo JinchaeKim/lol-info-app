@@ -29,11 +29,19 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <nav className="navFont flex justify-evenly bg-emerald-800">
-          <Link href={"/"}>Home</Link>
-          <Link href={"/champions"}>Champions</Link>
-          <Link href={"/rotation"}>Rotation</Link>
-          <Link href={"/items"}>Items</Link>
+        <nav className="flex justify-evenly bg-emerald-800 py-[10px] font-semibold">
+          <Link className="navFont" href={"/"}>
+            Home
+          </Link>
+          <Link className="navFont" href={"/champions"}>
+            Champions
+          </Link>
+          <Link className="navFont" href={"/rotation"}>
+            Rotation
+          </Link>
+          <Link className="navFont" href={"/items"}>
+            Items
+          </Link>
         </nav>
         {children}
       </body>
