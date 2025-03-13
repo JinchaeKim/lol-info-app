@@ -17,3 +17,15 @@ export const LOL_ITEM_URL = async (): Promise<string> => {
   const version = await getLatestVersion();
   return `https://ddragon.leagueoflegends.com/cdn/${version}/data/ko_KR/item.json`;
 };
+
+// 아이템 이미지 root
+export const ITEM_IMG_URL = async (): Promise<string> => {
+  const version = await getLatestVersion();
+  return `https://ddragon.leagueoflegends.com/cdn/${version}/img/item/`;
+};
+
+// 챔피언 이미지 root
+export const CHAMPION_IMG_URL = async (): Promise<string> => {
+  const version = await getLatestVersion();
+  return `https://ddragon.leagueoflegends.com/cdn/${version}/img/champion/`;
+};

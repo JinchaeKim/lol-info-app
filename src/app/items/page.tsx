@@ -1,7 +1,36 @@
+import { fetchItemList } from "@/utils/server-action";
+import Image from "next/image";
 import React from "react";
+import { ITEM_IMG_URL } from "../constants/RiotDataURL";
 
-const ItemsPage = () => {
-  return <h1 className="flexCenter title">Item List</h1>;
+const ItemsPage = async () => {
+  const imgUrl = await ITEM_IMG_URL();
+  const data = await fetchItemList();
+
+  return (
+    <>
+      <div className="m-[50px]">
+        <h1 className="flexCenter title mt-[80px] text-[30px]">Item List</h1>
+        <div className="itemGrid mt-[30px]">
+          {data.map(([key, item]) => {
+            return (
+              <div key={key} className="itemBorder h-[255px] w-[200px] p-4">
+                <Image
+                  src={`${imgUrl}${item.image.full}`}
+                  alt="Picture of the Item"
+                  width={100}
+                  height={100}
+                  className="mx-auto flex"
+                />
+                <h2 className="title mt-2 text-[20px]">{item.name}</h2>
+                <p className="text-emerald-50">{item.plaintext}</p>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </>
+  );
 };
 
 export default ItemsPage;
