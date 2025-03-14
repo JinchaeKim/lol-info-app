@@ -29,6 +29,6 @@
   }
 
   .itemGrid {
-    @apply grid grid-cols-1 place-items-center gap-4 sm:grid-cols-3 xl:grid-cols-6;
+    @apply grid grid-cols-1 gap-4 sm:grid-cols-3 xl:grid-cols-6;
   }
 }
