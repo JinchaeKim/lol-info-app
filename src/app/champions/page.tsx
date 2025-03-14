@@ -2,6 +2,7 @@ import { fetchChampionList } from "@/utils/server-action";
 import React from "react";
 import { CHAMPION_IMG_URL } from "../constants/RiotDataURL";
 import Image from "next/image";
+import Link from "next/link";
 
 const ChampionsPage = async () => {
   const imgUrl = await CHAMPION_IMG_URL();
@@ -13,17 +14,19 @@ const ChampionsPage = async () => {
       <div className="itemGrid mt-[30px] auto-rows-[minmax(200px,auto)]">
         {data.map((champion) => {
           return (
-            <div key={champion.key} className="itemBorder h-auto w-[200px] p-4">
-              <Image
-                src={`${imgUrl}${champion.image.full}`}
-                alt="Picture of the Champion"
-                width={100}
-                height={100}
-                className="mx-auto flex"
-              />
-              <h2 className="title mt-2 text-[20px]">{champion.name}</h2>
-              <p className="text-emerald-50">{champion.title}</p>
-            </div>
+            <Link key={champion.key} href={`/champions/${champion.id}`}>
+              <div className="itemBorder h-auto w-[200px] p-4">
+                <Image
+                  src={`${imgUrl}${champion.image.full}`}
+                  alt="Picture of the Champion"
+                  width={100}
+                  height={100}
+                  className="mx-auto flex"
+                />
+                <h2 className="title mt-2 text-[20px]">{champion.name}</h2>
+                <p className="text-emerald-50">{champion.title}</p>
+              </div>
+            </Link>
           );
         })}
       </div>
