@@ -1,7 +1,7 @@
 import { getLatestVersion } from "./GetVersion";
 
 // 챔피언 목록 API
-export const CHAMPION_LIST_URL = async (): Promise<string> => {
+export const CHAMPION_LIST_URL = async () => {
   const version = await getLatestVersion();
   return `https://ddragon.leagueoflegends.com/cdn/${version}/data/ko_KR/champion.json`;
 };
@@ -18,13 +18,13 @@ export const LOL_ITEM_URL = async (): Promise<string> => {
   return `https://ddragon.leagueoflegends.com/cdn/${version}/data/ko_KR/item.json`;
 };
 
-// 아이템 이미지 root
+// 아이템 이미지 API
 export const ITEM_IMG_URL = async (): Promise<string> => {
   const version = await getLatestVersion();
   return `https://ddragon.leagueoflegends.com/cdn/${version}/img/item/`;
 };
 
-// 챔피언 이미지 root
+// 챔피언 이미지 API
 export const CHAMPION_IMG_URL = async (): Promise<string> => {
   const version = await getLatestVersion();
   return `https://ddragon.leagueoflegends.com/cdn/${version}/img/champion/`;
