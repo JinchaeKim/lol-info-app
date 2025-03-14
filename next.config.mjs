@@ -1,7 +1,6 @@
 /** @type {import('next').NextConfig} */
 const NextConfig = {
   images: {
-    // domains: ["ddragon.leagueoflegends.com"],
     remotePatterns: [
       {
         protocol: "https",
