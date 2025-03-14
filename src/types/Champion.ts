@@ -1,5 +1,11 @@
 export type Champions = {
-  data: { key: string; name: string; title: string; blurb: string };
-  info: { attack: number; defense: number; magic: number; difficulty: number };
+  key: string;
+  name: string;
+  title: string;
   image: { full: string };
+};
+
+export type ChampionsDetail = Champions & {
+  blurb: string;
+  info: { attack: number; defense: number; magic: number; difficulty: number };
 };
