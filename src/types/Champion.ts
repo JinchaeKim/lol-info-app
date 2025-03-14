@@ -7,6 +7,6 @@ export type Champions = {
 };
 
 export type ChampionsDetail = Champions & {
-  blurb: string;
+  lore: string;
   info: { attack: number; defense: number; magic: number; difficulty: number };
 };
