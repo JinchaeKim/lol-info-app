@@ -1,3 +1,3 @@
-export type Rotation = {
+export type ChampionRotation = {
   freeChampionIds: number[];
 };

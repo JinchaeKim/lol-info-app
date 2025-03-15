@@ -4,9 +4,9 @@ import Image from "next/image";
 import React from "react";
 
 const ChampionDetail = async ({ params }: { params: { id: string } }) => {
-  const imgUrl = await CHAMPION_IMG_URL();
+  const img_Url = await CHAMPION_IMG_URL();
   const data = await fetchPickChampionList(params);
-  console.log("data", data);
+  // console.log("data", data);
   return (
     <div>
       {data.map((champion) => {
@@ -20,7 +20,7 @@ const ChampionDetail = async ({ params }: { params: { id: string } }) => {
             </div>
             <div className="grid gap-[30px]">
               <Image
-                src={`${imgUrl}${champion.image.full}`}
+                src={`${img_Url}${champion.image.full}`}
                 alt="Picture of the Champion"
                 width={250}
                 height={250}
