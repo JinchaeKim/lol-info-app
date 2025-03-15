@@ -36,7 +36,8 @@ export async function fetchItemList(): Promise<[string, Item][]> {
   const itemUrl = await LOL_ITEM_URL();
   const res = await fetch(itemUrl, { cache: "force-cache" }); //fetch의 첫번째 인자는 문자열
   const { data } = await res.json();
-  // 데이터 정제
+
+  // 데이터 정제: 정규표현식
   const cleanedData = Object.entries(data).map(([key, item]) => {
     return [
       key,

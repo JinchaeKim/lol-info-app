@@ -4,9 +4,9 @@ import React from "react";
 import { ITEM_IMG_URL } from "../constants/RiotDataURL";
 
 const ItemsPage = async () => {
-  const imgUrl = await ITEM_IMG_URL();
+  const img_Url = await ITEM_IMG_URL();
   const data = await fetchItemList();
-  console.log("data", data);
+  // console.log("data", data);
 
   return (
     <main className="m-[50px]">
@@ -16,7 +16,7 @@ const ItemsPage = async () => {
           return (
             <div key={key} className="itemBorder h-auto w-[200px] p-4">
               <Image
-                src={`${imgUrl}${item.image.full}`}
+                src={`${img_Url}${item.image.full}`}
                 alt="Picture of the Item"
                 width={100}
                 height={100}
