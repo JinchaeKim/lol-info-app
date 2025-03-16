@@ -1,6 +1,12 @@
 import { fetchChampionList } from "@/utils/server-action";
 import React from "react";
 import ChampionCards from "@/components/ChampionCards";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "LOL Champion",
+  description: "This is Champion List Website",
+};
 
 const ChampionsPage = async () => {
   const data = await fetchChampionList();

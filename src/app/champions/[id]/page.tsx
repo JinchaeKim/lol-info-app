@@ -3,7 +3,20 @@ import { fetchPickChampionList } from "@/utils/server-action";
 import Image from "next/image";
 import React from "react";
 
-const ChampionDetail = async ({ params }: { params: { id: string } }) => {
+type Props = {
+  params: {
+    id: string;
+  };
+};
+
+export function generateMetadata({ params }: Props) {
+  return {
+    title: `Champion Detail : ${params.id}`,
+    description: `Detail 페이지 : ${params.id}`,
+  };
+}
+
+const ChampionDetail = async ({ params }: Props) => {
   const img_Url = await CHAMPION_IMG_URL();
   const data = await fetchPickChampionList(params);
   // console.log("data", data);
@@ -14,7 +27,7 @@ const ChampionDetail = async ({ params }: { params: { id: string } }) => {
           <main key={champion.key} className="m-[60px]">
             <div>
               <h1 className="title text-[40px]">{champion.name}</h1>
-              <h2 className="font-semibold text-emerald-800">
+              <h2 className="font-semibold text-emerald-600">
                 {champion.title}
               </h2>
             </div>

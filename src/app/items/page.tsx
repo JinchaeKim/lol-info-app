@@ -2,6 +2,12 @@ import { fetchItemList } from "@/utils/server-action";
 import Image from "next/image";
 import React from "react";
 import { ITEM_IMG_URL } from "../constants/RiotDataURL";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "LOL Item",
+  description: "This is Item List Website",
+};
 
 const ItemsPage = async () => {
   const img_Url = await ITEM_IMG_URL();
@@ -14,7 +20,10 @@ const ItemsPage = async () => {
       <div className="itemGrid mt-[30px] auto-rows-[minmax(200px,auto)]">
         {data.map(([key, item]) => {
           return (
-            <div key={key} className="itemBorder h-auto w-[200px] p-4">
+            <div
+              key={key}
+              className="itemBorder hoverAction h-auto w-[200px] p-4 shadow-2xl"
+            >
               <Image
                 src={`${img_Url}${item.image.full}`}
                 alt="Picture of the Item"
