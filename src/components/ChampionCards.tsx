@@ -11,7 +11,7 @@ const Cards = async ({ data }: { data: Champions[] }) => {
       {data.map((champion) => {
         return (
           <Link key={champion.key} href={`/champions/${champion.id}`}>
-            <div className="itemBorder h-auto w-[200px] p-4">
+            <div className="itemBorder hoverAction h-auto w-[200px] p-4 shadow-2xl">
               <Image
                 src={`${img_Url}${champion.image.full}`}
                 alt="Picture of the Champion"
