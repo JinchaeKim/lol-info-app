@@ -1,4 +1,3 @@
-import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "../styles/global.css";
 import Link from "next/link";
@@ -13,11 +12,6 @@ const geistMono = localFont({
   variable: "--font-geist-mono",
   weight: "100 900",
 });
-
-export const metadata: Metadata = {
-  title: "LOL Rotation Champion",
-  description: "This is Rotation Champion List Website",
-};
 
 export default function RootLayout({
   children,
