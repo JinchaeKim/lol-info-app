@@ -4,7 +4,7 @@ import { getImgUrl, getRotation } from "../hooks/quries";
 import Card from "@/_components/Card";
 
 export default function Rotationpage() {
-  const { data: imgUrl, isPending, isError } = getImgUrl();
+  const { data: imgUrl, isPending, isError, error } = getImgUrl();
   const { data: rotation = [] } = getRotation();
 
   if (isPending) {
@@ -12,7 +12,12 @@ export default function Rotationpage() {
   }
 
   if (isError) {
-    return <div>에러가 발생했습니다!</div>;
+    return (
+      <>
+        <div>에러가 발생했습니다!</div>
+        <p>에러:{error.message}</p>
+      </>
+    );
   }
 
   return (
