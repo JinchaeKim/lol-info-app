@@ -1,7 +1,8 @@
-import { fetchChampionList } from "@/utils/server-action";
+import { fetchChampionList } from "@/utils/serverApi";
 import React from "react";
-import ChampionCards from "@/_components/ChampionCards";
 import { Metadata } from "next";
+import { CHAMPION_IMG_URL } from "../constants/RiotDataURL";
+import Card from "@/_components/Card";
 
 export const metadata: Metadata = {
   title: "LOL Champion",
@@ -10,12 +11,24 @@ export const metadata: Metadata = {
 
 async function ChampionsPage() {
   const data = await fetchChampionList();
-  console.log("data", data);
+  const img_Url = await CHAMPION_IMG_URL();
+  // console.log("data", data);
 
   return (
     <main className="m-[50px]">
       <h1 className="flexCenter title mt-[80px] text-[30px]">Champion List</h1>
-      <ChampionCards data={data} />
+      <div className="itemGrid mt-[30px] auto-rows-[minmax(200px,auto)]">
+        {data.map((champion) => (
+          <Card
+            key={champion.key}
+            id={champion.id}
+            name={champion.name}
+            title={champion.title}
+            image={champion.image}
+            img_Url={img_Url}
+          />
+        ))}
+      </div>
     </main>
   );
 }

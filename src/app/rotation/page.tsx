@@ -1,13 +1,11 @@
 "use client";
-import React, { useState } from "react";
-import Link from "next/link";
-import Image from "next/image";
+
 import { getImgUrl, getRotation } from "../hooks/quries";
+import Card from "@/_components/Card";
 
 export default function Rotationpage() {
   const { data: imgUrl, isPending, isError } = getImgUrl();
   const { data: rotation = [] } = getRotation();
-  const [hover, setHover] = useState<string | null>(null);
 
   if (isPending) {
     return <div>로딩 중입니다..</div>;
@@ -23,33 +21,16 @@ export default function Rotationpage() {
         Champion Rotation (This week for free!)
       </h1>
       <div className="itemGrid mt-[30px] auto-rows-[minmax(200px,auto)]">
-        {rotation.map((champion) => {
-          return (
-            <Link key={champion.key} href={`/champions/${champion.id}`}>
-              <div
-                className="hoverAction h-auto w-[200px] p-4 shadow-xl"
-                onMouseEnter={() => setHover(champion.id)}
-                onMouseLeave={() => setHover(null)}
-              >
-                <Image
-                  src={`${imgUrl}${champion.image.full}`}
-                  alt="Picture of the Champion"
-                  width={200}
-                  height={200}
-                  className="rounded-lg"
-                />
-                {hover === champion.id && (
-                  <div className="flexCenter bg-em absolute left-0 top-0 z-10 h-full w-full flex-col rounded-lg bg-slate-700 bg-opacity-60 backdrop-blur-sm">
-                    <div className="flexCenter z-20 flex-col">
-                      <h2 className="title text-[25px]">{champion.name}</h2>
-                      <p className="text-emerald-50">{champion.title}</p>
-                    </div>
-                  </div>
-                )}
-              </div>
-            </Link>
-          );
-        })}
+        {rotation.map((champion) => (
+          <Card
+            key={champion.key}
+            id={champion.id}
+            name={champion.name}
+            title={champion.title}
+            image={champion.image}
+            img_Url={imgUrl}
+          />
+        ))}
       </div>
     </main>
   );
