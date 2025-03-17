@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   description: "This is Item List Website",
 };
 
-const ItemsPage = async () => {
+async function ItemsPage() {
   const img_Url = await ITEM_IMG_URL();
   const data = await fetchItemList();
   // console.log("data", data);
@@ -43,6 +43,6 @@ const ItemsPage = async () => {
       </div>
     </main>
   );
-};
+}
 
 export default ItemsPage;

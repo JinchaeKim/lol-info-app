@@ -7,7 +7,7 @@ import { CHAMPION_IMG_URL } from "../constants/RiotDataURL";
 import Link from "next/link";
 import Image from "next/image";
 
-const Rotationpage = () => {
+export default function Rotationpage() {
   const [rotation, setRotation] = useState<Champions[]>([]);
   const [imgUrl, setImgUrl] = useState<string>();
   const [hover, setHover] = useState<string | null>(null);
@@ -58,6 +58,4 @@ const Rotationpage = () => {
       </div>
     </main>
   );
-};
-
-export default Rotationpage;
+}

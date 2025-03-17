@@ -9,14 +9,14 @@ type Props = {
   };
 };
 
-export function generateMetadata({ params }: Props) {
+export const generateMetadata = ({ params }: Props) => {
   return {
     title: `Champion Detail : ${params.id}`,
     description: `Detail 페이지 : ${params.id}`,
   };
-}
+};
 
-const ChampionDetail = async ({ params }: Props) => {
+async function ChampionDetail({ params }: Props) {
   const img_Url = await CHAMPION_IMG_URL();
   const data = await fetchPickChampionList(params);
   // console.log("data", data);
@@ -53,6 +53,6 @@ const ChampionDetail = async ({ params }: Props) => {
       })}
     </div>
   );
-};
+}
 
 export default ChampionDetail;

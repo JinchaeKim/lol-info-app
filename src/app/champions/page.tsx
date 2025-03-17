@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   description: "This is Champion List Website",
 };
 
-const ChampionsPage = async () => {
+async function ChampionsPage() {
   const data = await fetchChampionList();
   console.log("data", data);
 
@@ -18,6 +18,6 @@ const ChampionsPage = async () => {
       <ChampionCards data={data} />
     </main>
   );
-};
+}
 
 export default ChampionsPage;
