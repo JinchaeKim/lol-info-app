@@ -33,6 +33,6 @@
   }
 
   .hoverCard {
-    @apply absolute left-0 top-0 z-10 h-full w-full flex-col rounded-lg bg-slate-700 bg-opacity-60 backdrop-blur-sm;
+    @apply left-0 top-0 z-10 h-full w-full flex-col rounded-lg bg-slate-700 bg-opacity-60 backdrop-blur-sm;
   }
 }

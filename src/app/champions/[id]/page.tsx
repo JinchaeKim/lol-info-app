@@ -1,5 +1,5 @@
 import { CHAMPION_IMG_URL } from "@/app/constants/RiotDataURL";
-import { fetchPickChampionList } from "@/utils/server-action";
+import { fetchPickChampionList } from "@/utils/serverApi";
 import Image from "next/image";
 import React from "react";
 
@@ -39,8 +39,8 @@ async function ChampionDetail({ params }: Props) {
                 height={250}
                 className="mx-auto flex rounded-lg shadow-2xl"
               />
-              <p className="font-semibold text-emerald-500">{champion.lore}</p>
-              <ul className="font-semibold text-emerald-500">
+              <p className="font-semibold text-emerald-200">{champion.lore}</p>
+              <ul className="font-semibold text-emerald-400">
                 <span className="text-[25px]"> Stats</span>
                 <li>• atack: {champion.info.attack}</li>
                 <li>• defense: {champion.info.defense}</li>
