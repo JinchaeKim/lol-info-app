@@ -1,6 +1,6 @@
 import { fetchChampionList } from "@/utils/server-action";
 import React from "react";
-import ChampionCards from "@/components/ChampionCards";
+import ChampionCards from "@/_components/ChampionCards";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
