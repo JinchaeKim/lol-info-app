@@ -20,7 +20,7 @@ async function ItemsPage() {
       <div className="itemGrid mt-[30px] auto-rows-[minmax(200px,auto)]">
         {data.map(([key, item]) => (
           <Card
-            key={key}
+            id={key}
             name={item.name}
             title={item.plaintext}
             image={item.image}
