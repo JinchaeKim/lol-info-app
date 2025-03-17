@@ -4,3 +4,10 @@ export const getChampionRotation = async () => {
 
   return data;
 };
+
+export const getVersion = async () => {
+  const res = await fetch("http://localhost:3000/api/versions");
+  const data = await res.json();
+
+  return data;
+};

@@ -1,8 +1,9 @@
-import { getLatestVersion } from "./GetVersion";
+import { getVersion } from "@/utils/riotApi";
+// import { getLatestVersion } from "./GetVersion";
 
 // 챔피언 목록 API
 export const CHAMPION_LIST_URL = async () => {
-  const version = await getLatestVersion();
+  const version = await getVersion();
   return `https://ddragon.leagueoflegends.com/cdn/${version}/data/ko_KR/champion.json`;
 };
 
@@ -12,24 +13,24 @@ export const PICK_CHAMPION_URL = async ({
 }: {
   id: string;
 }): Promise<string> => {
-  const version = await getLatestVersion();
+  const version = await getVersion();
   return `https://ddragon.leagueoflegends.com/cdn/${version}/data/ko_KR/champion/${id}.json`;
 };
 
 // 아이템 목록 API
 export const LOL_ITEM_URL = async (): Promise<string> => {
-  const version = await getLatestVersion();
+  const version = await getVersion();
   return `https://ddragon.leagueoflegends.com/cdn/${version}/data/ko_KR/item.json`;
 };
 
 // 아이템 이미지 API
 export const ITEM_IMG_URL = async (): Promise<string> => {
-  const version = await getLatestVersion();
+  const version = await getVersion();
   return `https://ddragon.leagueoflegends.com/cdn/${version}/img/item/`;
 };
 
 // 챔피언 이미지 API
 export const CHAMPION_IMG_URL = async (): Promise<string> => {
-  const version = await getLatestVersion();
+  const version = await getVersion();
   return `https://ddragon.leagueoflegends.com/cdn/${version}/img/champion/`;
 };
