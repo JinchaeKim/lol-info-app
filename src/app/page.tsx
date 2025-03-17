@@ -22,7 +22,7 @@ export default function Home() {
           className="navFont hoverAction grid gap-3 text-[20px]"
         >
           <Image
-            src="/images/championList.png"
+            src="/images/championList.webp"
             alt="championListimg"
             width={600}
             height={550}
@@ -35,7 +35,7 @@ export default function Home() {
           className="navFont hoverAction grid gap-3 text-[20px]"
         >
           <Image
-            src="/images/rotation.png"
+            src="/images/rotation.webp"
             alt="rotationimg"
             width={600}
             height={550}
@@ -48,7 +48,7 @@ export default function Home() {
           className="navFont hoverAction grid gap-3 text-[20px]"
         >
           <Image
-            src="/images/items.png"
+            src="/images/items.webp"
             alt="itemimg"
             width={600}
             height={550}
