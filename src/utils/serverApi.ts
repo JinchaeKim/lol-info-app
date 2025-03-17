@@ -11,10 +11,10 @@ import { Item } from "@/types/Item";
 // 챔피언 목록 패칭
 export async function fetchChampionList(): Promise<Champions[]> {
   const chamUrl = await CHAMPION_LIST_URL();
-  const res = await fetch(chamUrl, { next: { revalidate: 86400 } }); //fetch의 첫번째 인자는 문자열
-  const { data } = await res.json(); // 전체 객체 중 data만
+  const res = await fetch(chamUrl, { next: { revalidate: 86400 } });
+  const { data } = await res.json();
 
-  return Object.values(data); // data를 배열로 변환
+  return Object.values(data);
 }
 
 // 특정 챔피언 상세 정보 패칭
@@ -24,7 +24,7 @@ export async function fetchPickChampionList({
   id: string;
 }): Promise<ChampionsDetail[]> {
   const pickUrl = await PICK_CHAMPION_URL({ id });
-  const res = await fetch(pickUrl, { cache: "no-store" }); //fetch의 첫번째 인자는 문자열
+  const res = await fetch(pickUrl, { cache: "no-store" });
   const { data } = await res.json();
 
   return Object.values(data);
@@ -33,7 +33,7 @@ export async function fetchPickChampionList({
 // 아이템 데이터 패칭
 export async function fetchItemList(): Promise<[string, Item][]> {
   const itemUrl = await LOL_ITEM_URL();
-  const res = await fetch(itemUrl, { cache: "force-cache" }); //fetch의 첫번째 인자는 문자열
+  const res = await fetch(itemUrl, { cache: "force-cache" });
   const { data } = await res.json();
 
   return Object.entries(data);
