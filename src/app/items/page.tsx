@@ -31,8 +31,12 @@ const ItemsPage = async () => {
                 height={100}
                 className="mx-auto flex"
               />
-              <h2 className="title mt-2 text-[20px]">{item.name}</h2>
-              <p className="text-emerald-50">{item.plaintext}</p>
+              <h2 className="title mt-2 text-[20px]">
+                {item.name.replace(/<[^>]+>|@\w+@/g, "")}
+              </h2>
+              <p className="text-emerald-50">
+                {item.plaintext.replace(/<[^>]+>|@\w+@/g, "")}
+              </p>
             </div>
           );
         })}

@@ -7,7 +7,6 @@ import {
 } from "@/app/constants/RiotDataURL";
 import { Champions, ChampionsDetail } from "@/types/Champion";
 import { Item } from "@/types/Item";
-import { formatValue } from "./formatValue";
 
 // 챔피언 목록 패칭
 export async function fetchChampionList(): Promise<Champions[]> {
@@ -37,17 +36,5 @@ export async function fetchItemList(): Promise<[string, Item][]> {
   const res = await fetch(itemUrl, { cache: "force-cache" }); //fetch의 첫번째 인자는 문자열
   const { data } = await res.json();
 
-  // 데이터 정제: 정규표현식
-  const cleanedData = Object.entries(data).map(([key, item]) => {
-    return [
-      key,
-      {
-        ...item,
-        name: formatValue(item.name),
-        plaintext: formatValue(item.plaintext),
-      },
-    ];
-  });
-
-  return cleanedData as [string, Item][]; // 타입 캐스팅
+  return Object.entries(data);
 }
