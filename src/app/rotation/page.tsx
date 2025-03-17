@@ -1,26 +1,21 @@
 "use client";
-
-import { Champions } from "@/types/Champion";
-import { getChampionRotation } from "@/utils/riotApi";
-import React, { useEffect, useState } from "react";
-import { CHAMPION_IMG_URL } from "../constants/RiotDataURL";
+import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { getImgUrl, getRotation } from "../hooks/quries";
 
 export default function Rotationpage() {
-  const [rotation, setRotation] = useState<Champions[]>([]);
-  const [imgUrl, setImgUrl] = useState<string>();
+  const { data: imgUrl, isPending, isError } = getImgUrl();
+  const { data: rotation = [] } = getRotation();
   const [hover, setHover] = useState<string | null>(null);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      const img_Url = await CHAMPION_IMG_URL();
-      const data = await getChampionRotation();
-      setImgUrl(img_Url);
-      setRotation(data);
-    };
-    fetchData();
-  }, []);
+  if (isPending) {
+    return <div>로딩 중입니다..</div>;
+  }
+
+  if (isError) {
+    return <div>에러가 발생했습니다!</div>;
+  }
 
   return (
     <main className="m-[50px]">
