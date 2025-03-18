@@ -35,9 +35,9 @@ export const CHAMPION_IMG_URL = async (): Promise<string> => {
   return `${RIOT_BASE_URL}/cdn/${version}/img/champion/`;
 };
 
-// 버전 API
+// 버전 API - 라우트 핸들러 사용
 export const VERSION_API_URL = `${RIOT_BASE_URL}/api/versions.json`;
 
-// 로테이션 API
+// 로테이션 API - 라우트 핸들러 사용
 export const ROTATION_API_URL =
   "https://kr.api.riotgames.com/lol/platform/v3/champion-rotations";
