@@ -38,7 +38,7 @@ export default function RootLayout({
             Items
           </Link>
         </nav>
-        <Provider> {children}</Provider>
+        <Provider>{children}</Provider>
       </body>
     </html>
   );
