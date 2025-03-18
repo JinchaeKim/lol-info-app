@@ -9,7 +9,7 @@ export const GET = async (): Promise<NextResponse> => {
   try {
     const res = await fetch(ROTATION_API_URL, {
       headers: {
-        "X-Riot-Token": process.env.NEXT_PUBLIC_RIOT_API_KEY!,
+        "X-Riot-Token": process.env.RIOT_API_KEY!,
       },
     });
 
