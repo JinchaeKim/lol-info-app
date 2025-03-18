@@ -12,7 +12,6 @@ export const metadata: Metadata = {
 async function ItemsPage() {
   const img_Url = await ITEM_IMG_URL();
   const data = await fetchItemList();
-  // console.log("data", data);
 
   return (
     <main className="m-[50px]">
@@ -20,7 +19,7 @@ async function ItemsPage() {
       <div className="itemGrid mt-[30px] auto-rows-[minmax(200px,auto)]">
         {data.map(([key, item]) => (
           <Card
-            id={key}
+            key={key}
             name={item.name}
             title={item.plaintext}
             image={item.image}

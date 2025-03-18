@@ -12,7 +12,6 @@ export const metadata: Metadata = {
 async function ChampionsPage() {
   const data = await fetchChampionList();
   const img_Url = await CHAMPION_IMG_URL();
-  // console.log("data", data);
 
   return (
     <main className="m-[50px]">

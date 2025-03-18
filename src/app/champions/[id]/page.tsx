@@ -19,7 +19,6 @@ export const generateMetadata = ({ params }: Props) => {
 async function ChampionDetail({ params }: Props) {
   const img_Url = await CHAMPION_IMG_URL();
   const data = await fetchPickChampionList(params);
-  // console.log("data", data);
   return (
     <div>
       {data.map((champion) => {
