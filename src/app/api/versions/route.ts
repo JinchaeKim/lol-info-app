@@ -1,12 +1,10 @@
+import { VERSION_API_URL } from "@/app/constants/RiotDataURL";
 import { NextResponse } from "next/server";
 
 // API 버전 라우트 핸들러
 export const GET = async (): Promise<NextResponse> => {
   try {
-    const res = await fetch(
-      "https://ddragon.leagueoflegends.com/api/versions.json",
-      { next: { revalidate: 86400 } },
-    );
+    const res = await fetch(VERSION_API_URL, { next: { revalidate: 86400 } });
 
     // 사용자 요청 에러
     if (!res) {

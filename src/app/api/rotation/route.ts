@@ -1,3 +1,4 @@
+import { ROTATION_API_URL } from "@/app/constants/RiotDataURL";
 import { Champions } from "@/types/Champion";
 import { ChampionRotation } from "@/types/ChampionRotation";
 import { fetchChampionList } from "@/utils/serverApi";
@@ -6,20 +7,17 @@ import { NextResponse } from "next/server";
 // 로테이션 API 라우트 핸들러 + 필터
 export const GET = async (): Promise<NextResponse> => {
   try {
-    const res = await fetch(
-      "https://kr.api.riotgames.com/lol/platform/v3/champion-rotations",
-      {
-        headers: {
-          "X-Riot-Token": process.env.NEXT_PUBLIC_RIOT_API_KEY!,
-        },
+    const res = await fetch(ROTATION_API_URL, {
+      headers: {
+        "X-Riot-Token": process.env.NEXT_PUBLIC_RIOT_API_KEY!,
       },
-    );
+    });
 
     // 사용자 요청 에러
     if (!res) {
       return NextResponse.json(
         { message: "error! 로테이션 챔피언 정보를 찾을 수 없습니다!" },
-        { status: 404 },
+        { status: 400 },
       );
     }
 
