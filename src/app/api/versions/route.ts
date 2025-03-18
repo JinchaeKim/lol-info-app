@@ -1,4 +1,4 @@
-import { VERSION_API_URL } from "@/app/constants/RiotDataURL";
+import { VERSION_API_URL } from "@/app/constants/riotDataURL";
 import { NextResponse } from "next/server";
 
 // API 버전 라우트 핸들러

@@ -1,4 +1,4 @@
-import { ROTATION_API_URL } from "@/app/constants/RiotDataURL";
+import { ROTATION_API_URL } from "@/app/constants/riotDataURL";
 import { Champions } from "@/types/Champion";
 import { ChampionRotation } from "@/types/ChampionRotation";
 import { fetchChampionList } from "@/utils/serverApi";

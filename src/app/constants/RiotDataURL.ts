@@ -1,5 +1,5 @@
 import { getVersion } from "@/utils/riotApi";
-import { BASE_URL } from "./BaseUrl";
+import { BASE_URL } from "./baseUrl";
 
 // 챔피언 목록 API
 export const CHAMPION_LIST_URL = async () => {

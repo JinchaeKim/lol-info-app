@@ -1,6 +1,6 @@
 import { fetchItemList } from "@/utils/serverApi";
 import React from "react";
-import { ITEM_IMG_URL } from "../constants/RiotDataURL";
+import { ITEM_IMG_URL } from "../constants/riotDataURL";
 import { Metadata } from "next";
 import Card from "@/_components/Card";
 

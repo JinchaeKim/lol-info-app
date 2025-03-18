@@ -1,4 +1,4 @@
-import { CHAMPION_IMG_URL } from "@/app/constants/RiotDataURL";
+import { CHAMPION_IMG_URL } from "@/app/constants/riotDataURL";
 import { fetchPickChampionList } from "@/utils/serverApi";
 import Image from "next/image";
 import React from "react";

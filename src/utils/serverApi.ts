@@ -4,7 +4,7 @@ import {
   CHAMPION_LIST_URL,
   LOL_ITEM_URL,
   PICK_CHAMPION_URL,
-} from "@/app/constants/RiotDataURL";
+} from "@/app/constants/riotDataURL";
 import { Champions, ChampionsDetail } from "@/types/Champion";
 import { Item } from "@/types/Item";
 

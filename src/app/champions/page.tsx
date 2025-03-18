@@ -1,7 +1,7 @@
 import { fetchChampionList } from "@/utils/serverApi";
 import React from "react";
 import { Metadata } from "next";
-import { CHAMPION_IMG_URL } from "../constants/RiotDataURL";
+import { CHAMPION_IMG_URL } from "../constants/riotDataURL";
 import Card from "@/_components/Card";
 
 export const metadata: Metadata = {
