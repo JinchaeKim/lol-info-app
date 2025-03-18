@@ -2,13 +2,14 @@
 
 import { getImgUrl, getRotation } from "../hooks/quries";
 import Card from "@/_components/Card";
+import Loading from "../loading";
 
 export default function Rotationpage() {
   const { data: imgUrl, isPending, isError, error } = getImgUrl();
   const { data: rotation = [] } = getRotation();
 
   if (isPending) {
-    return <div>로딩 중입니다..</div>;
+    return <Loading />;
   }
 
   if (isError) {
