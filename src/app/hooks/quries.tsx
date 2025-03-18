@@ -1,7 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import { CHAMPION_IMG_URL } from "../constants/RiotDataURL";
 import { getChampionRotation } from "@/utils/riotApi";
-import { QUERY_KEY } from "../constants/queryKey";
+import { QUERY_KEY } from "../constants/QueryKey";
 
 export const getImgUrl = () => {
   return useQuery({
