@@ -38,3 +38,12 @@ export async function fetchItemList(): Promise<[string, Item][]> {
 
   return Object.entries(data);
 }
+
+// 최신 버전 페칭
+export async function getLatestVersion() {
+  const res = await fetch(
+    "https://ddragon.leagueoflegends.com/api/versions.json",
+  );
+  const versions = await res.json();
+  return versions[0];
+}
