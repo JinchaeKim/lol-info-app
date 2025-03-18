@@ -17,7 +17,7 @@ const Card: React.FC<CardProps> = ({ id, name, title, img_Url, image }) => {
 
   const CardContens = (
     <div
-      className="hoverAction relative h-auto w-[200px] p-4 shadow-xl"
+      className="hoverAction h-auto w-[200px] p-4 shadow-xl"
       onMouseEnter={() => setHover(id)}
       onMouseLeave={() => setHover(null)}
     >
@@ -29,7 +29,7 @@ const Card: React.FC<CardProps> = ({ id, name, title, img_Url, image }) => {
         className="rounded-lg"
       />
       {hover === id && (
-        <div className="flexCenter hoverCard absolute">
+        <div className="flexCenter hoverCard">
           <div className="flexCenter z-20 flex-col">
             <h2 className="title text-[25px]">
               {name.replace(/<[^>]+>|@\w+@/g, "")}

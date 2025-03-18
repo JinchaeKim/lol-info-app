@@ -11,28 +11,28 @@
   body {
     background-color: #263339;
   }
+}
 
-  .title {
-    @apply font-bold text-emerald-300;
-  }
+.title {
+  @apply font-bold text-emerald-300;
+}
 
-  .flexCenter {
-    @apply flex items-center justify-center;
-  }
+.flexCenter {
+  @apply flex items-center justify-center;
+}
 
-  .navFont {
-    @apply font-semibold text-white hover:font-semibold hover:text-yellow-400;
-  }
+.navFont {
+  @apply font-semibold text-white hover:font-semibold hover:text-yellow-400;
+}
 
-  .itemGrid {
-    @apply grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-6;
-  }
+.itemGrid {
+  @apply grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-6;
+}
 
-  .hoverAction {
-    @apply transition-transform duration-300 ease-in-out hover:-translate-y-2;
-  }
+.hoverAction {
+  @apply relative transition-transform duration-300 ease-in-out hover:-translate-y-2;
+}
 
-  .hoverCard {
-    @apply left-0 top-0 z-10 h-full w-full flex-col rounded-lg bg-slate-700 bg-opacity-60 backdrop-blur-sm;
-  }
+.hoverCard {
+  @apply absolute left-0 top-0 z-10 h-full w-full flex-col rounded-lg bg-slate-700 bg-opacity-60 backdrop-blur-sm;
 }

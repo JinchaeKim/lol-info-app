@@ -5,7 +5,7 @@ const config: Config = {
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
-    "./styles/global.css",
+    // "./styles/global.css",
   ],
   theme: {
     extend: {
@@ -15,6 +15,7 @@ const config: Config = {
       },
     },
   },
+  safelist: ["text-emerald-50"],
   plugins: [],
 };
 export default config;
