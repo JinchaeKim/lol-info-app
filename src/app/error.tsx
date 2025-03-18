@@ -17,7 +17,7 @@ export default function Error() {
         <p className="text-white">에러 메세지 : {error.message}</p>
         <button
           onClick={() => refetch()}
-          className="border-2 border-emerald-100 p-4 text-white"
+          className="rounded-md border-2 border-emerald-100 p-4 text-white"
         >
           다시 시도
         </button>
