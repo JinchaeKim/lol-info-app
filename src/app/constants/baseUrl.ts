@@ -1,1 +1,1 @@
-export const BASE_URL = "https://ddragon.leagueoflegends.com/cdn/";
+export const BASE_URL = "https://ddragon.leagueoflegends.com";
