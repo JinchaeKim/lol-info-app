@@ -3,6 +3,7 @@ import React from "react";
 import { ITEM_IMG_URL } from "../constants/riotDataURL";
 import { Metadata } from "next";
 import Card from "@/_components/Card";
+import { Item } from "@/types/Item";
 
 export const metadata: Metadata = {
   title: "LOL Item",
@@ -10,8 +11,8 @@ export const metadata: Metadata = {
 };
 
 async function ItemsPage() {
-  const img_Url = await ITEM_IMG_URL();
-  const data = await fetchItemList();
+  const img_Url: string = await ITEM_IMG_URL();
+  const data: [string, Item][] = await fetchItemList();
 
   return (
     <main className="m-[50px]">

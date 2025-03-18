@@ -3,6 +3,7 @@ import React from "react";
 import { Metadata } from "next";
 import { CHAMPION_IMG_URL } from "../constants/riotDataURL";
 import Card from "@/_components/Card";
+import { Champions } from "@/types/Champion";
 
 export const metadata: Metadata = {
   title: "LOL Champion",
@@ -10,8 +11,8 @@ export const metadata: Metadata = {
 };
 
 async function ChampionsPage() {
-  const data = await fetchChampionList();
-  const img_Url = await CHAMPION_IMG_URL();
+  const data: Champions[] = await fetchChampionList();
+  const img_Url: string = await CHAMPION_IMG_URL();
 
   return (
     <main className="m-[50px]">

@@ -2,7 +2,7 @@ import { getLatestVersion } from "@/utils/serverApi";
 import { RIOT_BASE_URL } from "./baseUrl";
 
 // 챔피언 목록 API
-export const CHAMPION_LIST_URL = async () => {
+export const CHAMPION_LIST_URL = async (): Promise<string> => {
   const version = await getLatestVersion();
   return `${RIOT_BASE_URL}/cdn/${version}/data/ko_KR/champion.json`;
 };
