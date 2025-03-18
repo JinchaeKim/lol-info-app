@@ -14,6 +14,10 @@ export async function fetchChampionList(): Promise<Champions[]> {
   const res = await fetch(chamUrl, { next: { revalidate: 86400 } });
   const { data } = await res.json();
 
+  //해당 페이지로 에러 보내기
+  if (!res.ok) {
+    throw new Error("챔피언 목록 데이터를 불러오는 중 문제가 발생했습니다!");
+  }
   return Object.values(data);
 }
 
@@ -27,6 +31,11 @@ export async function fetchPickChampionList({
   const res = await fetch(pickUrl, { cache: "no-store" });
   const { data } = await res.json();
 
+  //해당 페이지로 에러 보내기
+  if (!res.ok) {
+    throw new Error("챔피언 상세 데이터를 불러오는 중 문제가 발생했습니다!");
+  }
+
   return Object.values(data);
 }
 
@@ -35,6 +44,11 @@ export async function fetchItemList(): Promise<[string, Item][]> {
   const itemUrl = await LOL_ITEM_URL();
   const res = await fetch(itemUrl, { cache: "force-cache" });
   const { data } = await res.json();
+
+  //해당 페이지로 에러 보내기
+  if (!res.ok) {
+    throw new Error("아이템 데이터를 불러오는 중 문제가 발생했습니다!");
+  }
 
   return Object.entries(data);
 }
