@@ -4,8 +4,9 @@ import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
 
+// 타입이 null이면 타입 에러
 type CardProps = {
-  id: string | null;
+  id?: string; // string | undefined
   name: string;
   title: string;
   img_Url: string;
@@ -14,11 +15,12 @@ type CardProps = {
 
 const Card: React.FC<CardProps> = ({ id, name, title, img_Url, image }) => {
   const [hover, setHover] = useState<string | null>(null);
+  const hoverKey = id ?? name; // id가 없을 때 name을 사용
 
   const CardContens = (
     <div
       className="hoverAction h-auto w-[200px] p-4 shadow-xl"
-      onMouseEnter={() => setHover(id)}
+      onMouseEnter={() => setHover(hoverKey)}
       onMouseLeave={() => setHover(null)}
     >
       <Image
@@ -28,7 +30,7 @@ const Card: React.FC<CardProps> = ({ id, name, title, img_Url, image }) => {
         height={200}
         className="rounded-lg"
       />
-      {hover === id && (
+      {hover === hoverKey && (
         <div className="flexCenter hoverCard">
           <div className="flexCenter z-20 flex-col">
             <h2 className="title text-[25px]">
