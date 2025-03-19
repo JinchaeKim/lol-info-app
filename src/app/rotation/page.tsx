@@ -5,20 +5,11 @@ import Card from "@/_components/Card";
 import Loading from "../loading";
 
 export default function Rotationpage() {
-  const { data: imgUrl, isPending, isError, error } = getImgUrl();
+  const { data: imgUrl, isPending } = getImgUrl();
   const { data: rotation = [] } = getRotation();
 
   if (isPending) {
     return <Loading />;
-  }
-
-  if (isError) {
-    return (
-      <>
-        <div>에러가 발생했습니다!</div>
-        <p>에러:{error.message}</p>
-      </>
-    );
   }
 
   return (
@@ -34,7 +25,7 @@ export default function Rotationpage() {
             name={champion.name}
             title={champion.title}
             image={champion.image}
-            img_Url={imgUrl}
+            img_Url={imgUrl ?? ""} // 에러 처리 생략 시, data는 undefined가 될 가능성
           />
         ))}
       </div>
