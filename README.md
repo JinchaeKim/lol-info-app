@@ -69,6 +69,7 @@
 - 서버 액션, 객체 데이터 배열 변환, Image 태그 설정 : https://coco910.tistory.com/106
 - 인덱스 시그니처 VS Record<key, value> / 정규표현식 : https://coco910.tistory.com/107
 - Next의 Tanstack Query : https://coco910.tistory.com/108
+- Error Handling : https://coco910.tistory.com/109
 
 <br />
 <br />
